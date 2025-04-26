@@ -1,3 +1,0 @@
-useRef - useRef   is a React Hook that returns a mutable reference object whose .current property is persistent across renders and does not trigger re-renders when updated.
-
-//aggreaget function in mongo db <- read them
