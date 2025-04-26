@@ -59,7 +59,7 @@ const Home = () => {
   return (
     <DashBoardLayout activeMenu="Dashboard">
       <div className="my-5 mx-auto">
-
+          {/* total balance,total exlense,total income cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <InfoCard
               icon={<IoMdCard />}
@@ -83,13 +83,11 @@ const Home = () => {
             />
           </div>
 
-          {/* //debug */}
-        {console.log("\n\nPassing to RecentTransactions:", dashboardData?.recentTransactions)}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
           <RecentTransactions
             transactions={dashboardData?.recentTransactions}
-            onSeeMore={() => navigate("/expense")}
+            onSeeMore={() => navigate("/recent")}
           />
 
           <FinanceOverview

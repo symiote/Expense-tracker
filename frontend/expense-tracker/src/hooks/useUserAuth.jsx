@@ -30,6 +30,7 @@ export const useUserAuth = () => {
       } catch (error) {
         // On error, log issue and redirect to login if component is mounted
         console.error("Failed to fetch user info in useUserAuth hook:", error);
+        
         if (isMounted) {
           clearUser();             // Clear any possibly stale user data
           navigate("/login");      // Redirect to login page

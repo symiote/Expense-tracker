@@ -23,11 +23,11 @@
 }
 
 .btn-primary{
-  @apply w-full text-sm font-medium bg-black text-white shadow-lg shadow-slate-200  p-[10px] rounded-md my-1 hover:bg-slate-300 hover:text-black
+  @apply w-full text-sm font-medium bg-black text-white shadow-lg shadow-slate-200  p-[10px] rounded-md my-2 hover:bg-slate-900 hover:text-purple-400 
 }
 
 .card{
-  @apply bg-white p-6 rounded-2xl shadow-md shadow-gray-200 border border-gray-200/50;
+  @apply bg-white p-6 rounded-2xl shadow-md shadow-gray-200 border border-gray-300/50;
 }
 
 .card-btn{
