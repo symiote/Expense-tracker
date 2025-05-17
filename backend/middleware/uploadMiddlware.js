@@ -1,6 +1,6 @@
 const multer = require("multer");
 
-//  congifgure storage
+//  configure storage
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "uploads/"); // Folder where files will be stored

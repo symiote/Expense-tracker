@@ -1,12 +1,11 @@
 import React, { useContext, useState } from "react";
-import AuthLayout from "../../components/layouts/AuthLayout";
 import { Link, useNavigate } from "react-router-dom";
-import Input from "../../components/Inputs/input";
 import { validateEmail } from "../../utils/helper";
-
 import axiosInstance from "../../utils/axiosInstance";
 import { API_PATHS } from "../../utils/apiPaths";
 import { UserContext } from "../../context/userContext";
+import AuthLayout from "../../components/layouts/authLayout";
+import Input from "../../components/Inputs/Input";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -21,6 +20,10 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
+    if(email==="" || password===""){
+      setError("All fields are required ");
+      return;
+    }
     if (!validateEmail(email)) {
       setError("Please Enter a valid email address.");
       return;
@@ -48,7 +51,6 @@ const Login = () => {
         // If a token exists, we store it in the browser's localStorage.
         localStorage.setItem("token", token);
         updateUser(user);
-        console.log("in login user  : ", user); // for debug
         navigate("/dashboard");
       }
       console.log("Login Success:", response.data);
@@ -84,13 +86,18 @@ const Login = () => {
             placeholder="Min 8 Characters"
             type="password"
           />
-
           {error && <p className="text-red-500 text-xs pb-2.5">{error}</p>}
+          
+          {/* //new */}
+          <p className="text-sm mt-2">
+            <Link to="/forgot-password" className="text-violet-600 underline">
+              Forgot Password?
+            </Link>
+          </p>
 
           <button type="submit" className="btn-primary">
             Login
           </button>
-
           <p className="text-[13px] text-slate-800 mt-3">
             Don't have and Account?{" "}
             <Link

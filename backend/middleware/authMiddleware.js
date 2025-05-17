@@ -3,10 +3,9 @@ const User = require("../models/User");
 
 //middleware for  getuser route
 exports.protect =async(req,res,next)=>{
-
+    
     // extract the token form  authorization header and it will give = Beared "our token" <- so use split[1] to acess the token 
     let token = req.headers.authorization?.split(" ")[1];
-
 
     if (!token ) {
         return res.status(401).json({ message: "Not authorized,no token " });

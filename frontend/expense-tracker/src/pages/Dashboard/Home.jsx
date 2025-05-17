@@ -33,10 +33,6 @@ const Home = () => {
         `${API_PATHS.DASHBOARD.GET_DATA}`
       );
 
-      // for debug
-      console.log("Full Dashboard Response:", response); // Log the entire response
-      console.log("Dashboard Data:", response.data); // Log just the data
-
       if (response.data) {
         setDashBoardData(response.data);
       }
@@ -82,7 +78,6 @@ const Home = () => {
               color={"bg-red-500"}
             />
           </div>
-
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
           <RecentTransactions

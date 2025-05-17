@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import AuthLayout from "../../components/layouts/authLayout";
 import { Link, useNavigate } from "react-router-dom";
 // import Input from "../../components/Inputs/input";
-import Input from "../../components/inputs/input";
+import Input from "../../components/Inputs/Input";
 import { validateEmail } from "../../utils/helper";
 import ProfilePhotoSelector from "../../components/Inputs/ProfilePhotoSelector";
 import uploadImage from "../../utils/uploadImage";
@@ -65,7 +65,7 @@ const SignUp = () => {
         // If a token exists, we store it in the browser's localStorage.
         localStorage.setItem("token", token);
         updateUser(user);
-        navigate("/dashboard");
+        navigate("/login");
       }
       console.log("signup Success:", response.data);
     } catch (error) {

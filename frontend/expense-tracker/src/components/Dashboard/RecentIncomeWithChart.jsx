@@ -14,9 +14,7 @@ const RecentIncomeWithChart = ({data,totalIncome}) => {
             amount : item?.amount,
         }))
         setChartData(dataArr);
-      } 
-    //   console.log("chart data  ---\n",chartData);
-      
+      }       
 
       useEffect(() => {
         prepareChartData();

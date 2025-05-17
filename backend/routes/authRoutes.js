@@ -6,6 +6,8 @@ const {
   registerUser,
   loginUser,
   getUserInfo,
+  resetPassword,
+  forgotPassword,
 } = require("../controllers/authController");
 
 const router = express.Router();
@@ -13,6 +15,10 @@ const router = express.Router();
 router.post("/register", registerUser);
 router.post("/login", loginUser);
 router.get("/getUser",protect,getUserInfo) //here protect is middleware not defined yrt 58:27
+
+//new
+router.post("/forgot-password", forgotPassword);
+router.post("/reset-password/:token", resetPassword);
 
 
 router.post("/upload-image", upload.single("image"),(req,res)=>{
